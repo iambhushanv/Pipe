@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<!-- <div class="container mt-5">
     <h1 class="text-center alert alert-primary">Pipe Tasks</h1>
     <div class="row">
         <div class="col-12">
@@ -94,6 +94,42 @@
                 <p class="alert alert-info">
                     {{title | summaryWord: 15}}
                 </p>
+            </div>
+        </div>
+    </div> -->
+
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label  class="font-weight-bold" for="teamName">Enter Team Name</label>
+                    <input  [(ngModel)]="searchValue" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Sr No</th>
+                            <th>Name</th>
+                            <th>Team Name</th>
+                            <th>ODI Runs</th>
+                            <th>Test Runs</th>
+                            <th>Debut Year</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let player of playersArr | filterPlayer: searchValue; let i= index">
+                            <td>{{i + 1}}</td>
+                            <td>{{player.name}}</td>
+                            <td>{{player.team}}</td>
+                            <td>{{player.odiRuns}}</td>
+                            <td>{{player.testRuns}}</td>
+                            <td>{{player.yearDebut}}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

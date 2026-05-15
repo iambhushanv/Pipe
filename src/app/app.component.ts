@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { cricketers } from './shared/const/cricketer.data';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,10 @@ export class AppComponent {
     rating : 4.62334,
     price : 199,
     releaseDate : new Date(2025, 1, 26)
-
   }
+
+  playersArr = cricketers
+
+  searchValue !: string
 
 }

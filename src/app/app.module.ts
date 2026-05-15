@@ -8,6 +8,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import { SummaryPipe } from './shared/pipe/summary.pipe';
 import { SummaryPipeWord } from './shared/pipe/summary2.pipe';
+import { FilterPipe } from './shared/pipe/filter.pipe';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -16,14 +18,16 @@ import { SummaryPipeWord } from './shared/pipe/summary2.pipe';
   declarations: [
     AppComponent,
     SummaryPipe,
-    SummaryPipeWord
+    SummaryPipeWord,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

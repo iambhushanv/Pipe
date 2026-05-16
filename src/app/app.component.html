@@ -99,15 +99,26 @@
     </div> -->
 
 
+
+
     <div class="container mt-5">
         <h1 class="text-center alert alert-primary">Filter Task</h1>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-8">
                 <div class="form-group">
-                    <label  class="font-weight-bold" for="teamName">Enter Team Name</label>
-                    <input  [(ngModel)]="searchValue" type="text" class="form-control">
+                    <input [(ngModel)]='searchValue' type="text" class="form-control">
                 </div>
             </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <select [(ngModel)]="filterBy" class="form-control">
+                        <option value="team">Filter By Team Name</option>
+                        <option value="player">Filter By Player Name</option>
+                        <option value="yearDebut">Filter By Debut Year</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row"></div>
             <div class="col-md-12">
                 <table class="table table-bordered">
                     <thead>
@@ -121,7 +132,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let player of playersArr | filterPlayer: searchValue; let i= index">
+                        <tr *ngFor="let player of playersArr | filterPlayer: searchValue: filterBy ; let i= index">
                             <td>{{i + 1}}</td>
                             <td>{{player.name}}</td>
                             <td>{{player.team}}</td>

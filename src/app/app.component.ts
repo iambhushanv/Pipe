@@ -20,6 +20,8 @@ export class AppComponent {
 
   playersArr = cricketers
 
-  searchValue !: string
+  searchValue : string = ''
+  filterBy : string = 'team'
+  
 
 }
